@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/시험/test.css" />
+    <title>exam</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="top">
+            <div class="top_content">
+                <span class="top_content_span">로그인</span>
+                <span class="top_content_span">|</span><span class="top_content_span">회원가입</span>
+            </div>
+        </div>
+        <div class="banner"><img style="width: 600px;height: 150px;"
+                src="https://cdn.pixabay.com/photo/2022/03/23/18/56/beach-7087722_640.jpg" alt=""></div>
+        <div class="mainmenu">
+            <ul class="mainmenu_ul">
+                <li class="mainmenu_ul_li">웹표준</li>
+                <li class="mainmenu_ul_li">자바</li>
+                <li class="mainmenu_ul_li">안드로이드</li>
+                <li class="mainmenu_ul_li">데이터베이스</li>
+                <li class="mainmenu_ul_li">스프링</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="main_cotainer_l"></div>
+            <div class="main_cotainer_r">
+                <h3 class="main_cotainer_r_h3">회 원 가 입</h3>
+                <div class="main_content_signup">
+                    <label for="id">아이디</label>
+                    <input type="text" id="id">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password">
+                    <label for="passwordCheck">비밀번호확인</label>
+                    <input type="password" id="passwordCheck">
+                    <label for="tel">전화번호</label>
+                    <input type="tel" id="tel">
+                    <label for="nickname">별칭</label>
+                    <input type="text" id="nickname">
+                    <label for="korea">지역</label>
+                    <form id="korea">
+                        <select name="korea">
+                            <option value="none">=== 선택 ===</option>
+                            <option value="seoul">서울</option>
+                            <option value="busan">부산</option>
+                            <option value="deagu">대구</option>
+                            <option value="deajeon">대전</option>
+                            <option value="ulsan">울산</option>
+                        </select>
+                    </form>
+                    <label for="gender">성별</label>
+                    <form action="gender" id="gender">
+                        <input type="radio" name="gender" checked="checked" value="man" id="man" />
+                        <label for="man" class="up">남자</label>
+                        <input type="radio" name="gender" value="women" id="women" />
+                        <label for="women" class="up">여자</label>
+                    </form>
+                    <label for="hobby">취미</label>
+                    <form action="hobby" id="hobby">
+                        <input type="checkbox" value="reading" id="reading">
+                        <label for="reading" class="main_content_signup_hobby_span">독서</label>
+                        <input type="checkbox" value="Music Listening" id="Music Listening">
+                        <label for="Music Listening" class="main_content_signup_hobby_span">음악감상</label>
+                        <input type="checkbox" value="exercise" id="exercise">
+                        <label for="exercise" class="main_content_signup_hobby_span">운동</label>
+                        <input type="checkbox" value="game" id="game">
+                        <label for="game" class="main_content_signup_hobby_span">게임</label>
+                    </form>
+                    <label for="birth">생년월일</label>
+                    <input type="month" id="birth">
+                    <button class="main_content_signup_Btn" type="submit">회원가입</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <span>Cpyright by Gildong Hong. All Rights Reserved.</span>
+        </div>
+
+    </div>
+</body>
+
+</html>

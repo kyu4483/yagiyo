@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+<title>YAGIYO</title>
+<style>
+    *{
+        /* outline: 1px solid red; */
+    }
+    .item2:hover{
+        transform: rotate(-720deg);
+        transition: all 1s linear;
+    }
+.container3>.main1,.container4>.main{
+background-color: rgba(225, 226, 216, 0.527);
+color: lightslategray;
+border-radius: 50%;
+font-size: 2rem;
+margin-left: 30px;
+
+}
+.container3>.main1:hover{
+background-color: rgb(235, 221, 101);
+block-size: 2em;
+transform: rotate(20deg);
+transition: all 0.5s linear;
+}
+.container4>.main:hover{
+    background-color: rgb(235, 221, 101);
+block-size: 2em;
+transform: rotate(-20deg);
+transition: all 0.5s linear;
+}
+.main,.main1:active{
+background-color: salmon;
+color: red;
+}
+body{
+width: 100vw;
+height: 100vh;
+margin: 10px;
+/* outline: solid 1px red; */
+display: grid;
+grid-template-columns: 1fr minmax(300px,1500px) 1fr;
+grid-auto-rows: minmax(auto,150px) auto auto;
+grid-template-areas:
+'s1 a s2'
+'s1 b s2'
+'s1 c s2';
+}
+header{
+grid-area: a;
+background-color: rgb(216, 223, 124);
+position: sticky;
+top: 0;
+}
+.container{
+margin-top: 10px,0;
+display: grid;
+grid-template-columns: 1fr 3fr 1fr;
+grid-auto-rows: auto;
+}
+.icon:hover{
+background-color: antiquewhite;
+transform: scale(1.3);
+}
+.container1-1{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: minmax(200px,auto);
+    /* background-color: rgb(121, 115, 145); */
+    grid-template-areas: 
+    'a1 a2 a3';
+}
+.banner{
+    transform: scale(1.5);
+}
+.container1-1>.main2{
+    grid-area: a2;
+}
+.container1-1>.main3{
+    grid-area: a3;
+    justify-content: center;
+    text-align: center;
+    line-height: 200px;
+}
+.item1>p{
+    display: inline;
+}
+.item2{
+/* outline: solid 1px red; */
+font-weight: 1000;
+font-size: 3em;
+font-style: normal;
+color: rgb(103, 113, 165);
+text-align: center;
+}
+.item3>p{
+    display: inline;
+}
+.item3>img{
+margin-left: 5%;
+}
+main{
+margin: 0,50px;
+grid-area: b;
+background-color: rgba(243, 242, 193, 0.918);
+}
+.container2{
+display: grid;
+grid-template-columns: repeat(3,minmax(auto,1fr));
+justify-content: center;
+}
+.serch-1:hover{
+    transform: scale(2);
+    transition: all 0.3s linear;
+}
+.mainb{
+/* outline: solid 1px red; */
+margin-top: 20px;
+text-align: center;
+}
+.mainb>input{
+font-size: 2em;
+}
+.mainb>img{
+margin-top: 10px;
+}
+.container3{
+/* outline: solid 1px red; */
+display: grid;
+margin-top: 50px;
+grid-template-columns: repeat(10,minmax(100px,1fr));
+grid-auto-rows: 50px;
+justify-content: center;
+text-align: center;
+}
+.container3 button:hover{
+    transform: rotate(30deg);
+    transition: all 0.2s linear;
+}
+.container3-1{
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+    font-size: 50px;
+}
+.container3-1:hover{
+    transform: rotate(-10deg);
+}
+.container4{
+/* outline: solid 1px red; */
+display: grid;
+margin-top: 50px;
+grid-template-columns: repeat(5,minmax(100px,1fr));
+grid-auto-rows: 50px;
+justify-content: center;
+text-align: center;
+}
+.container4 button:hover{
+    transition: all 0.2s linear;
+    transform: rotate(-320deg);
+}
+.container4-1{
+    margin-top: 50px;
+    display: grid;
+    justify-content: center;
+    font-size: 50px;
+}
+.container4-1:hover{
+    transform: rotate(-10deg);
+}
+footer{
+grid-area: c;
+background-color: rgb(216, 223, 124);
+}
+.container5{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 4fr 2fr;
+    grid-row: minmax(auto,100px);
+    grid-template-areas: 
+    'a1 a2 a3 a4';
+}
+.container5>.footer2{
+    grid-area: a2;
+    text-align: center;
+}
+.container5>.footer2>.p-1{
+    font-size: 20px;
+}
+.container5>.footer3{
+    grid-area: a3;
+    text-align: center;
+}
+.container5>.footer3>.span-1{
+    color: red;
+}
+.container6{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: minmax(auto,2fr) minmax(auto,1fr);
+    grid-template-rows: minmax(auto,600px);
+}
+.container6>.item6-1{
+    text-align: center;
+}
+.container6>.item6-1 .button-6{
+    height: 100px;
+    width: 600px;
+    margin: 10px;
+    margin-left: 50px;
+    border-radius: 10;
+    background-color: aliceblue;
+}
+.container6>.item6-2{
+    text-align: center;
+}
+.container6>.item6-1>.button-6:hover{
+    background-color: rgb(226, 240, 252);
+}
+.container6>.item6-2>.button-7{
+    height:100px;
+    width: 400px;
+    margin: 30px;
+    border-radius: 10;
+    background-color: rgb(158, 178, 194);
+}
+.container6>.item6-2>.button-6:hover{
+  
+    background-color: rgb(127, 164, 197);
+    position: relative;
+    top: -50px;
+}
+</style>
+</head>
+<body>
+<header>
+<div class="container">
+<div class="item1">
+<a href="#"><img class="icon" style="height: 30px;" src="https://cdn-icons-png.flaticon.com/128/3492/3492257.png"></a>
+<p><a href="#">약국</a></p>
+</div>
+<div class="item2">YAGIYO</div>
+<div class="item3">
+<a href="#"><img class="icon" style="height: 20px;" src="https://cdn-icons-png.flaticon.com/128/745/745205.png"></a>
+<p><a href="#">커뮤니티</a></p>
+<a href="#"><img class="icon" style="height: 20px;" src="https://cdn-icons-png.flaticon.com/128/7725/7725861.png"></a>
+<p><a href="#">분석</a></p>
+<a href="#"><img class="icon" style="height: 20px;" src="https://cdn-icons-png.flaticon.com/128/5087/5087579.png"></a>
+<p><a href="#">로그인</a></p>
+</div>
+</header>
+<main>
+    <img class="biggoguma" style="height: 10px; width: 10px;" src="/prj1/img/goguma.png">
+    <div class="container1-1">
+        <div class="main1"></div>
+        <div class="main2">
+            <div id="indicators-carousel" class="relative"  data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96" data-carousel-interval="3000" id="slide">
+                     <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                        <img class="banner" src="https://media.istockphoto.com/id/491395412/ko/%EC%82%AC%EC%A7%84/%ED%95%9C%EB%B0%A9%EC%95%BD-%ED%99%98%EC%95%BD-%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%B2%98%EB%A6%AC-%EB%B0%9D%EC%9D%80-%EB%B0%B0%EA%B2%BD.jpg?s=612x612&w=0&k=20&c=BNNxGfILPEeygiBx40nw7xJfoFXraPDEA8YhMpWO4Jk=" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img class="banner" src="https://media.istockphoto.com/id/1019902910/ko/%EC%82%AC%EC%A7%84/%ED%99%98%EC%95%BD-%EB%B0%B0%EA%B2%BD%EA%B8%B0%EC%88%A0.jpg?s=612x612&w=0&k=20&c=I0PBmsB3wufIoDcYxHU_LcsROQ-ABizTRcmdu3PuJUg=" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img class="banner" src="https://media.istockphoto.com/id/1256064440/ko/%EC%82%AC%EC%A7%84/%EB%A9%B4%EC%97%AD-%EC%A6%9D%ED%8F%AD%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%95%BD%EB%AC%BC-%EB%98%90%EB%8A%94-%EC%B2%9C%EC%97%B0-%EC%A0%9C%ED%92%88.jpg?s=612x612&w=0&k=20&c=v8sdGEYVVTLX80-n-NYlOi279xZue3qTud1uKspdJds=" alt="...">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img class="banner" src="https://media.istockphoto.com/id/1215835762/ko/%EC%82%AC%EC%A7%84/%EB%B9%84%ED%83%80%EB%AF%BC-%EB%B3%B4%EC%B6%A9%EC%A0%9C%EC%99%80-%EC%8B%A0%EC%84%A0%ED%95%9C-%EB%A0%88%EB%AA%AC.jpg?s=612x612&w=0&k=20&c=3EZoxtVJjfbIfHbySgG3S8q1B1_C0dWAZEsWrYiW5a0=" alt="...">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img class="banner" src="https://media.istockphoto.com/id/499257708/ko/%EC%82%AC%EC%A7%84/%EC%A4%80%EB%B9%84%EA%B0%80-%EB%82%B4-%EC%98%81%EC%96%91-%EB%B3%B4%EC%B6%A9%EC%A0%9C.jpg?s=612x612&w=0&k=20&c=DKJj5eOMqp9Q14PkDXeiAPOrB6pwizzYs5azCJfYQsQ=" alt="...">
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+            <!-- <button class="button-1" style="width: 130px; height: 130px; position: relative; right: -200px;" >분석</button> -->
+        </div>
+        <div class="main3"></div>
+    </div>
+<div class="container2">
+<div class="maina"></div>
+<div class="mainb"><input class="serch" type="search">
+<a href="#"><img class="serch-1" style="height: 30px; position: relative; left: 430px; bottom: 30px;" src="https://cdn-icons-png.flaticon.com/128/5272/5272056.png" alt=""></div></a>
+<div class="mainc"></div>
+</div>
+<div class="container3-1">
+    <p>어떤성분을 찾아요?</p>
+</div>
+<div class="container3">
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+<div class="main1"><button>성분</button></div>
+</div>
+<div class="container4-1">
+    <p>어디가 불편해요?</p>
+</div>
+
+<section class="variable-width">
+    <div><button style="font-size: 5em;">dd</button></div>
+    <div><img src="/image/test.webp" alt=""></div>
+    <div><img src="/image/test.webp" alt=""></div>
+    <div><img src="/image/test.webp" alt=""></div>
+    <div><img src="/image/test.webp" alt=""></div>
+    <div><img src="/image/test.webp" alt=""></div>
+    <div><img src="/image/test.webp" alt=""></div>
+    <div><img src="/image/test.webp" alt=""></div>
+  </section>
+
+  <script type="text/javascript">
+    $('.variable-width').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      centerMode: true,
+      variableWidth: true
+    });
+  </script>
+  <div data-aos="button-6"></div>
+  <script>
+    AOS.init();
+  </script>
+
+<div class="container4">
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+<div class="main"><button>불편</button></div>
+</div>
+<div class="container6">
+    <div class="item6-1">
+        <p style="text-align: center;font-size: 2em;">다른사람과 소통해 보아요</p>
+    <button class="button-6">공지사항 베스트 글 제목</button><br>
+    <button class="button-6">핫딜 베스트 글 제목</button><br>
+    <button class="button-6">논문자료 베스트 글 제목</button><br>
+    <button class="button-6">자유~ 베스트 글 제목</button><br>
+    </div>
+    <div class="item6-2">
+        <p style="text-align: center;font-size: 2em;">공지가떳어요</p>
+        <button class="button-7">공지</button><br>
+        <button class="button-7">또공지</button><br>
+        <button class="button-7">또또공지</button>
+        </div>
+</div>
+
+<script>
+var slideleft = {
+    distance: '150%',
+    origin: 'left',
+    opacity: null
+};
+var slideright = {
+    distance: '150%',
+    origin: 'right',
+    opacity: null
+};
+
+ScrollReveal().reveal('.button-6',slideleft);
+ScrollReveal().reveal('.button-6', { delay: 375, reset: true });
+
+ScrollReveal().reveal('.button-7',slideright);
+ScrollReveal().reveal('.button-7', { delay: 375, reset: true });
+
+ScrollReveal().reveal('.main', { duration: 1500, reset: true });
+ScrollReveal().reveal('.main1', { duration: 1500, reset: true });
+</script>
+
+
+</main>
+<footer>
+    <div class="container5">
+        <div class="footer1"></div>
+        <div class="footer2">
+            <p class="p-1">YAGIYO</p>
+            <p>야기요</p>
+        </div>
+        <div class="footer3">
+            <span>Administer@yagiyo.com</span><span>현재접속자 : xxxx명</span><br>
+            <span><a href="#">이용약관,</a></span><span><a href="#">개인정보처리방침,</a></span><span><a href="#">고객의소리,</a></span><span><a href="#">게시글중단요청</a></span><br>
+            <span>COPYRIGHTⓒ</span><span class="span-1">YAGIYO.COM</span><span>All rights reserved </span>
+        </div>
+        <div class="footer4"></div>
+    </div>
+</footer>
+</body>
+</html>

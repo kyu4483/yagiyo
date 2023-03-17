@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/yagiyo/mainpage.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Fredoka+One&family=Black+Han+Sans&family=Do+Hyeon&family=Noto+Sans+KR:wght@100&family=Unbounded&display=swap"
+    />
+    <!-- 슬라이드 참고링크 -->
+
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="slick/slick/slick-theme.css"/>
+
+<!-- 아이콘 참고 링크 -->
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+<!-- 스크롤 효과 참고 링크 -->
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+    <title>YAGIYO</title>
+    <script>
+
+// font-family: "orbitron", sans-serif;
+
+  (function(d) {
+    var config = {
+      kitId: 'iid4ktc',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+
+//font-family: "pretendard", sans-serif;
+  
+(function (d) {
+        var config = {
+            kitId: "iid4ktc",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+
+
+      
+      function myFunction() {
+  document.getElementById("Active").classList.toggle("show");
+}
+    </script>
+
+
+  </head>
+  <script
+    src="https://kit.fontawesome.com/2a217787c6.js"
+    crossorigin="anonymous"
+  ></script>
+  <body>
+    <div class="top-wrap">
+      <div class="top">
+        <div class="gnb-wrap">
+          <div class="title">
+            <a href=""><h1>YAGIYO</h1></a>
+          </div>
+          <div class="gnb">
+            <div class="gnb_l">
+              <a href="#"><i class="fa-solid fa-map-location-dot"></i></a>
+            </div>
+            <div class="gnb_c">
+              <div class="search-wrap">
+                <input onclick="myFunction()" type="text" id="searchWrap" placeholder="성분을 입력해주세요" />
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+              </div>
+              <div class="searchActive" id="Active" >
+                </div>
+            </div>
+            <div class="gnb_r">
+              <ul>
+                <a href="#"><li>1:1분석</li></a>
+               <a href="#"><li>커뮤니티</li></a>
+                <a href="#"><li>로그인</li></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <!-- Main -->
+
+    <div class="main">
+      <div class="section1">
+        <img src="https://cdn.pixabay.com/photo/2016/02/07/16/35/world-1185076_960_720.png" alt="">
+        <img src="https://cdn.pixabay.com/photo/2016/12/18/10/57/fish-oil-1915424_960_720.jpg" alt="">
+        <img src="https://cdn.pixabay.com/photo/2014/02/03/11/45/medications-257344_960_720.jpg" alt="">
+      </div>
+
+<!-- 슬라이드 -->
+
+<script>
+$('.section1').slick({autoplay: true,autoplaySpeed: 2000});
+</script>
+
+<!-- 슬라이드 스타일 -->
+
+<style>
+
+  .section1{position: relative;}
+  .section1 button {position: absolute; z-index:10; top:50%; transform:translateY(-50%);
+  width: 70px; height: 70px; border-radius: 100%; border: none;}
+  
+  .section1 button::before{font-family:'xeicon'; color: #fff; font-size: 45px;}
+  .section1 button.slick-prev {left:50px; font-size: 0; color: transparent;}
+  .section1 button.slick-prev::before{content: "\e93d"; font-family: 'xeicon';}
+  .section1 button.slick-next {right:50px; font-size: 0; color: transparent;}
+  .section1 button.slick-next::before{content: "\e940"; font-family: 'xeicon';}
+
+  .section1 button:hover{background:rgba(0,0,0,.7); transition: all 0.5s linear;}
+
+</style>
+
+      <div class="txt1">
+        <span class="text1-1">인기 성분</span><span>이에요</span>
+      </div>
+      <div class="section2">
+        <div class="Ingredient-list1">
+          <div class="ingredient-one">
+            <a href=""><p>루테인</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>오메가</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>프로바이오틱스(유산균)</p></a>  
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>비타민C</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>레시틴</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>코엔자임Q10</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>비타민B1</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>비타민A</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>칼슘</p></a>
+        </div>
+        <div class="ingredient-one">
+        <a href=""><p>2</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>  
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>
+          </div>
+          <div class="ingredient-one">
+            <a href=""><p>2</p></a>
+        </div>
+        <div class="ingredient-one">
+            <a href=""><p>3</p></a>
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>  
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>
+              </div>
+              <div class="ingredient-one">
+                <a href=""><p>3</p></a>
+            </div>
+        </div>
+      </div>
+
+      <!-- 슬라이드 스타일 -->
+
+      <style>
+          .Ingredient-list1{position: relative;}
+            .Ingredient-list1 button {position: absolute; z-index:10; top:103%; transform:translateY(-50%);
+            width: 0px; height: 0px; border-radius: 100%; background:rgba(0,0,0,.5); border: none;}
+            
+            .Ingredient-list1 button.slick-prev {left:560px; font-size: 0; color: transparent; display: none;}
+            .Ingredient-list1 button.slick-prev::before{content: "\e93d"; font-family: 'xeicon'; color :rgba(0,0,0,.5); }
+            .Ingredient-list1 button.slick-next {right:575px; font-size: 0; color: transparent; display: none;}
+            .Ingredient-list1 button.slick-next::before{content: "\e940"; font-family: 'xeicon'; color :rgba(0,0,0,.5);}
+          
+            .Ingredient-list1 button:hover{background:rgba(0,0,0,.7); transition: all 0.5s linear;}
+            .Ingredient-list1 button#slick-slide-control10{position: absolute; top: 50%; left: 35%;  width: 15px; height: 15px;
+                font-size: 0; color: transparent; background-color: #fff;  }
+                
+                .Ingredient-list1 button#slick-slide-control11{position: absolute; top:50%; left: 40%;  width: 15px; height: 15px;  
+                    font-size: 0; color: transparent; background-color: #fff; }
+                    
+                .Ingredient-list1 button#slick-slide-control12{position: absolute; top: 50%; left: 45%;  width: 15px; height: 15px;
+                    font-size: 0; color: transparent; background-color: #fff; }
+
+                    /* .Ingredient-list1 li{position: absolute; left:50%;
+                    } */
+                    .Ingredient-list1 ul.slick-dots{position: absolute; top: 80%; border: none;}
+      </style>
+
+<script>
+    $('.Ingredient-list1').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 9,
+  slidesToScroll: 9,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+
+
+
+});
+</script>
+
+<script>
+    $('.Ingredient-list1').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+</script>
+
+      <div class="txt2">
+        <span class="text2-1">어떤 부분</span
+        ><span>을 가장 개선하고 싶으세요?</span>
+      </div>
+      <div class="section3">
+        <div class="Ingredient-list2">
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+          <div class="ingredient-one"><a href="">lorem</a></div>
+
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+          <div class="ingredient-one"><a href="">asd</a></div>
+        </div>
+      </div>
+
+      <!-- 공지사항 -->
+      
+    <div class="section5">
+      <div class="announcementlist">
+        <div class="announcement1">공지1</div>
+        <div class="announcement2">공지2</div>
+        <div class="announcement3">공지3</div>
+      </div>
+    </div>
+
+    <!-- 공지사항 스크롤 효과 -->
+
+    <script>
+      var slideup = {
+        distance: '150%',
+        origin: 'up',
+        opacity: null
+    };
+
+ScrollReveal().reveal('.announcement1',slideup);
+ScrollReveal().reveal('.announcement1', { delay: 375, reset: true });
+
+ScrollReveal().reveal('.announcement2',slideup);
+ScrollReveal().reveal('.announcement2', { delay: 400, reset: true });
+
+ScrollReveal().reveal('.announcement3',slideup);
+ScrollReveal().reveal('.announcement3', { delay: 425, reset: true });
+  </script>
+
+      <!-- 커뮤니티 글 -->
+
+      <div class="section4">
+        <div class="communitylist">
+          <div class="list1">사진1</div>
+          <div class="list1-1">글1</div>
+          <div class="list2">사진2</div>
+          <div class="list2-1">글2</div>
+          <div class="list3">사진5</div>
+          <div class="list3-1">글3</div>
+          <div class="list4">사진7</div>
+          <div class="list4-1">글4</div>
+      </div>
+    </div>
+
+<!-- 커뮤니티 스크롤 효과 -->
+
+<script>
+    var slideleft = {
+      distance: '150%',
+      origin: 'left',
+      opacity: null
+  };
+
+  var slideright = {
+      distance: '200%',
+      origin: 'right',
+      opacity: null
+  };
+  
+ScrollReveal().reveal('.communitylist',slideleft);
+ScrollReveal().reveal('.communitylist', { delay: 375, reset: true });
+
+ScrollReveal().reveal('.list1-1',slideright);
+ScrollReveal().reveal('.list1-1', { delay: 375, reset: true });
+
+ScrollReveal().reveal('.list2-1',slideright);
+ScrollReveal().reveal('.list2-1', { delay: 400, reset: true });
+
+ScrollReveal().reveal('.list3-1',slideright);
+ScrollReveal().reveal('.list3-1', { delay: 425, reset: true });
+
+ScrollReveal().reveal('.list4-1',slideright);
+ScrollReveal().reveal('.list4-1', { delay: 450, reset: true });
+</script>
+
+    <!-- footer -->
+
+    <footer>
+      <div class="footer1">
+        <div class="footer-info">
+          <p calss=>YAGIYO</p>
+          <ul>
+            <li>대표이사 : 강한승,박대준</li>
+            <li>서울시 송파구 송파대로 570</li>
+            <li>사업자번호: 759-87-00821</li>
+            <li>건강기능식품판매업신고: 제 2018-0107318 호</li>
+            <li>전화: 02-6203-9811 | 제휴문의: marketing@carewith.us</li>
+            <li>Copyright ⓒ2023 YAGIYO all rights reserved</p></li>
+          </ul>
+          <div class="customer">
+            <p>고객센터</p>
+            <p>02-6203-9810 cs@carewith.us</p>
+            <p>평일 오전 10:00 ~ 오후 17:00 (점심시간 12:00~14:00)</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

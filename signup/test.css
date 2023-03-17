@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+/* 초기화 */
+li,
+p,
+span,
+ul {
+  all: unset;
+  /* border: 1px solid red; */
+}
+
+/* * {
+    outline: 1px red solid;
+} */
+
+.wrap {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  justify-self: center;
+  grid-template-columns: 1fr 600px 1fr;
+  grid-template-rows: 50px 150px 50px auto 70px;
+  grid-template-areas:
+    'top top top'
+    'banner_left banner_center banner_right'
+    'mainmenu_left mainmenu_center mainmenu_right'
+    'main_left main_center main_right'
+    'footer_left footer_center footer_right';
+}
+
+.top {
+  display: grid;
+  grid-area: top;
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: bold;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_content {
+  display: flex;
+  position: relative;
+  left: 230px;
+  cursor: pointer;
+}
+
+.banner {
+  grid-area: banner_center;
+}
+
+.mainmenu {
+  display: grid;
+  grid-area: mainmenu_center;
+  background: black;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.mainmenu_ul {
+  display: grid;
+  justify-content: center;
+  margin-left: 0;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+.mainmenu_ul_li {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.mainmenu_ul_li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.main {
+  display: grid;
+  grid-area: main_center;
+  grid-template-areas: 'main_l main_r';
+  grid-template-columns: 20% 80%;
+}
+
+.main_cotainer_l {
+  grid-area: main_l;
+  background-color: lightskyblue;
+}
+
+.main_cotainer_r {
+  padding: 40px;
+  grid-area: main_r;
+  background-color: lightcyan;
+  justify-content: center;
+  justify-items: center;
+}
+
+.main_cotainer_r_h3 {
+  margin: 10px;
+  text-align: center;
+}
+
+.main_content_signup {
+  padding: 10px;
+  width: 250px;
+  margin: auto;
+  border: 0.3px;
+  display: grid;
+  justify-self: center;
+  background-color: #fff;
+}
+
+.main_content_signup_hobby_span {
+  font-size: small;
+}
+
+.main_content_signup_Btn {
+  margin-top: 10px;
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.main_content_signup_Btn:active {
+  margin-top: 10px;
+  background-color: rgb(86, 122, 86);
+  color: #fff;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.footer {
+  display: flex;
+  grid-area: footer_center;
+  background-color: gray;
+  text-align: center;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
