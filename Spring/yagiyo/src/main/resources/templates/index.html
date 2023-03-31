@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>초기페이지</title>
+</head>
+<body>
+<h3>초기페이지</h3>
+<ul>
+<!--  <th:bolck th:if="${session.isEmpty()}">-->
+<!--    <li><a href="" th:href="@{/login}">로그인</a></li>-->
+    <li><a href="" th:href="@{/members/add}">회원가입</a></li>
+<!--  </th:bolck>-->
+<!--  <th:bolck th:unless="${session.isEmpty()}">-->
+<!--    <li><a href="" th:href="@{/logout}">로그아웃</a></li>-->
+<!--  </th:bolck>-->
+</ul>
+</body>
+</html>
