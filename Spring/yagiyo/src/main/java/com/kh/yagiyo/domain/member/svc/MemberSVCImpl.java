@@ -23,7 +23,7 @@ public class MemberSVCImpl implements MemberSVC {
   }
 
   @Override
-  public void update(Long id, Member member) {
+  public void update(Long memberId, Member member) {
 
   }
 
@@ -33,7 +33,7 @@ public class MemberSVCImpl implements MemberSVC {
   }
 
   @Override
-  public Optional<Member> findById(Long id) {
+  public Optional<Member> findById(Long MemberId) {
     return Optional.empty();
   }
 
@@ -48,13 +48,13 @@ public class MemberSVCImpl implements MemberSVC {
   }
 
   @Override
-  public boolean isExist(String email) {
-    return false;
+  public boolean isExist(String id) {
+    return memberDAO.isExist(id);
   }
 
   @Override
-  public Optional<Member> login(String email, String pw) {
-    return Optional.empty();
+  public Optional<Member> login(String id, String pw) {
+    return memberDAO.login(id,pw);
   }
 
   @Override

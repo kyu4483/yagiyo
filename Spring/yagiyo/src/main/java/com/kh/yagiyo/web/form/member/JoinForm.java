@@ -5,9 +5,12 @@ import lombok.Data;
 
 @Data
 public class JoinForm {
-  private Long id;
+
+  private String id;
 
   private String pw;
+
+  private String pw_check;
 
   private String nick;
 
@@ -16,6 +19,6 @@ public class JoinForm {
 
   private String gender;
 
-  private int age;
+  private String age;
 
 }

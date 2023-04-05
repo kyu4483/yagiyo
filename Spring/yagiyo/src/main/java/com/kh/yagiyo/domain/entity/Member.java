@@ -8,11 +8,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Member {
-      private long id;
+  private Long memberId;
+      private String id;
   private String pw;
   private String nick;
   private String email;
   private String gender;
-  private int age;
+  private String age;
   private String gubun;
+
+  public Member(Long memberId, String id, String pw) {
+    this.memberId = memberId;
+    this.id = id;
+    this.pw = pw;
+  }
 }
