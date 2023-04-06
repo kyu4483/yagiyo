@@ -265,7 +265,7 @@ function updateTimer() {
 //서비스 이용약관 창으로 뛰우기,일단 클릭시 체크박스 완료되게 설정
 
 $agreeUrl.addEventListener('click', () => {
-  const url = 'http://localhost:9080/members/Agree.html';
+  const url = 'http://localhost:9081/members/Agree';
   const name = 'areeeUrl';
   window.open(url, name, 'width=800,height=800,left=600');
   //클릭시 체크박스 완료되게 설정 (임시)
@@ -273,7 +273,7 @@ $agreeUrl.addEventListener('click', () => {
 });
 const $identityUrl = document.getElementById('identityUrl');
 $identityUrl.addEventListener('click', () => {
-  const url = 'http://localhost:9080/members/Identity.html';
+  const url = 'http://localhost:9081/members/Identity';
   const name = 'identityUrl';
   window.open(url, name, 'width=800,height=800,left=600');
   $checkboxIdentity.checked = true;

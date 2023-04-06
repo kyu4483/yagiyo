@@ -49,14 +49,20 @@
     <div class="container">
       <div class="container_title"><h2>회원가입</h2></div>
       <div class="container_contents">
-        <label for="id" class="container_contents_item">아이디</label>
+
+          <label for="id" class="container_contents_item">아이디</label>
         <input
             placeholder="영문,숫자를 이용해 만들어주세요(6~15자내외)"
             class="container_contents_item_input"
             type="text"
+            id="id"
             th:field="*{id}"
         />
+        <span class="error"></span>
+        <span th:errors="*{id}"></span>
         <div id="idError" class="continer_contents_error"></div>
+
+
 
         <label for="pw" class="container_contents_item">비밀번호</label>
         <input
@@ -198,9 +204,8 @@
         ><a
             id="agreeUrl"
             target="agreeUrl"
-            href="http://localhost:9080/members/Agree.html"
-            th:href="@{Agree}">
-        >[필수] 서비스의 이용약관 동의</a
+            th:href="@{/members/Agree}">
+        [필수] 서비스의 이용약관 동의</a
         ></span
         >
       </div>
@@ -212,8 +217,8 @@
         ><a
             id="identityUrl"
             target="identityUrl"
-            href="http://localhost:9080/members/Identity.html"
-        >[필수] 개인정보 처리방침 동의</a
+            th:href="@{/members/Identity}">
+          [필수] 개인정보 처리방침 동의</a
         ></span
         >
       </div>
@@ -234,6 +239,36 @@
 </div>
 </div>
   </form>
-<script type="text/javascript" src="../js/signup.js"></script>
+<script type="text/javascript" th:src="@{../js/signup.js}"></script>
+<script type="module">
+      import { ajax } from '/js/common.js';
+
+    const $id = document.getElementById('id');
+
+    const chkEmail = res => {
+      if(res.header.rtcd == '00'){
+        if(res.data){
+          $id.nextElementSibling.textContent='사용중인 아이디 입니다.'
+          $id.focus();
+        }else{
+          $id.nextElementSibling.textContent='사용가능한 아이디 입니다.'
+        }
+      }else if(res.header.rtcd == '01'){
+          $id.nextElementSibling.textContent=`${res.header.rtmsg}`
+          $id.focus();
+      }
+    }
+
+    const chkId_h = e =>{
+      console.log('');
+      const url = `/api/members/id?id=${$id.value}`;
+      ajax.get(url)
+          .then(res=>res.json())
+          .then(chkId_h)         //res=>chkId_h(res)
+          .catch(console.error);   //err=>console.error(err)
+    }
+    $id.addEventListener('',chkId_h,false);
+
+  </script>
 </body>
 </html>

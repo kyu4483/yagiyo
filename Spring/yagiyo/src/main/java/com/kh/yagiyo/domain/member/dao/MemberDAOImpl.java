@@ -3,8 +3,10 @@ package com.kh.yagiyo.domain.member.dao;
 import com.kh.yagiyo.domain.entity.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -21,8 +23,10 @@ import java.util.Optional;
 @Repository
 @RequiredArgsConstructor
 
-public class MemberDAOImpl implements MemberDAO{
+public class MemberDAOImpl implements MemberDAO {
   private final NamedParameterJdbcTemplate template;
+  private final JdbcTemplate jdbcTemplate;
+
   @Override
   //등록
 
@@ -48,7 +52,7 @@ public class MemberDAOImpl implements MemberDAO{
 
     SqlParameterSource param = new BeanPropertySqlParameterSource(member);
     KeyHolder keyHolder = new GeneratedKeyHolder(); //insert된 레코드에서 컬럼값추출
-    template.update(sql.toString(),param,keyHolder,new String[]{"memberid"});
+    template.update(sql.toString(), param, keyHolder, new String[]{"memberid"});
 
     long memberId = keyHolder.getKey().longValue();
 
@@ -66,15 +70,16 @@ public class MemberDAOImpl implements MemberDAO{
     sql.append(" where email = ? ");
 
     SqlParameterSource param = new MapSqlParameterSource()
-        .addValue("id",member.getId())
-        .addValue("nick",member.getNick())
-        .addValue("gender",member.getGender())
-        .addValue("age",member.getAge())
-        .addValue("memberid",memberId)
-        .addValue("email",member.getEmail());
+        .addValue("id", member.getId())
+        .addValue("nick", member.getNick())
+        .addValue("gender", member.getGender())
+        .addValue("age", member.getAge())
+        .addValue("memberid", memberId)
+        .addValue("email", member.getEmail());
 
-    template.update(sql.toString(),param);
+    template.update(sql.toString(), param);
   }
+
   @Override
   public Optional<Member> findByEmail(String email) {
     StringBuffer sql = new StringBuffer();
@@ -203,7 +208,7 @@ public class MemberDAOImpl implements MemberDAO{
     sql.append("  from member ");
     sql.append(" where id = :id and pw = :pw ");
 
-    Map<String, String> param = Map.of("id", id,"pw",pw);
+    Map<String, String> param = Map.of("id", id, "pw", pw);
     // 레코드1개를 반환할경우 query로 list를 반환받고 list.size() == 1 ? list.get(0) : null 처리하자!!
     List<Member> list = template.query(
         sql.toString(),
@@ -229,7 +234,7 @@ public class MemberDAOImpl implements MemberDAO{
     List<String> result = template.query(
         sql.toString(),
         param,
-        (rs, rowNum)->rs.getNString("email")
+        (rs, rowNum) -> rs.getNString("email")
     );
 
     return (result.size() == 1) ? Optional.of(result.get(0)) : Optional.empty();

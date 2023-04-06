@@ -32,4 +32,5 @@ public interface MemberSVC {
 
   //아이디찾기
   Optional<String> findEmailByNickname(String nick);
+
 }

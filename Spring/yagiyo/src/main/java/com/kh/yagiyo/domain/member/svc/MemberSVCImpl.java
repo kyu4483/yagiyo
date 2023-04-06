@@ -2,8 +2,10 @@ package com.kh.yagiyo.domain.member.svc;
 
 import com.kh.yagiyo.domain.entity.Member;
 import com.kh.yagiyo.domain.member.dao.MemberDAO;
+import com.kh.yagiyo.domain.member.dao.MemberDAOImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.Optional;
 public class MemberSVCImpl implements MemberSVC {
 
   private final MemberDAO memberDAO;
+
   @Override
   public Member save(Member member) {
     return memberDAO.save(member);
@@ -54,11 +57,12 @@ public class MemberSVCImpl implements MemberSVC {
 
   @Override
   public Optional<Member> login(String id, String pw) {
-    return memberDAO.login(id,pw);
+    return memberDAO.login(id, pw);
   }
 
   @Override
   public Optional<String> findEmailByNickname(String nick) {
     return Optional.empty();
   }
-}
+  }
+

@@ -14,7 +14,6 @@ public class JoinForm {
 
   private String nick;
 
-  @Email
   private String email;
 
   private String gender;
